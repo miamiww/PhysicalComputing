@@ -8,6 +8,11 @@ let goalX;
 let goalY;
 let chunkMover;
 let inGoal;
+let joyx = 0 ;
+let joyy = 0 ;
+let joypress;
+
+var socket = io.connect(window.location.origin);
 
 var browserSize = {
   browserWidth: window.innerWidth || document.body.clientWidth,
@@ -16,6 +21,26 @@ var browserSize = {
 
 let canvasSizeWidth = browserSize.browserWidth;
 let canvasSizeHeight = browserSize.browserHeight;
+
+socket.on('mysocket', function(data) {
+    console.log(data);
+    incoming = data.split(',');
+    joyx = map(incoming[0], 0, 1023, 0, canvasSizeWidth);
+    joyy = map(incoming[1], 0, 1023, 0, canvasSizeHeight);
+    joypress = incoming[2];
+    // console.log(incoming);
+});
+
+
+function Cursor(){
+  this.x = joyx;
+  this.y = joyy;
+}
+
+Cursor.prototype.show = function(){
+  fill(255);
+  rect(joyx-5,joyy-5,5,5);
+}
 
 function Puck(){
   this.x = width/2;
@@ -35,9 +60,9 @@ Puck.prototype.display = function(){
 }
 
 Puck.prototype.drift = function(){
-  let diffX = mouseX - this.x;
-  let diffY = mouseY - this.y;
-  if(mouseIsPressed){
+  let diffX = joyx - this.x;
+  let diffY = joyy - this.y;
+  if(joypress == 0){
     this.x += diffX * comeToSpeed;
     this.y += diffY * comeToSpeed;
   } else {
@@ -103,10 +128,6 @@ function pointsUpWords(){
   _pointsFiller(4400,4600,"all the way down for the last time",blacK,width/3,height/1.2);
 
 
-
-
-
-
 }
 
 function pointsDownWords(){
@@ -115,7 +136,7 @@ function pointsDownWords(){
   _pointsFiller(-1500,-1250,"surely you've figured it out by now",blacK,width/4,height/3);
   _pointsFiller(-2550,-2150,"you're going to make them angry",reD,width/4,height/3);
   _pointsFiller(-2750,-2500,"down down down",reD,width/4,height/2);
-  _pointsFiller(-2800,-2650,"tumbling, crumbling",reD,width/3,height/1.5);
+  _pointsFiller(-2800,-2650,"tumbling, tumbling",reD,width/3,height/1.5);
   _pointsFiller(-3500,-3200,"I was kidding about making them angry",blacK,width/4,height/3);
   _pointsFiller(-3800,-3450,"there's no them, it's just us here",blacK,width/3,height/1.5);
   _pointsFiller(-3950,-3850,"forever",blacK,width/2,height/1.5);
@@ -141,6 +162,7 @@ function setup() {
   goalY = height/2-GoalSize/2;
   chunkMover = 2*GoalSize/3;
   gamePuck = new Puck();
+  player = new Cursor();
 
 }
 
@@ -150,8 +172,10 @@ function draw() {
   background(255);
   textFont("Courier");
   goal();
+  player.show();
   gamePuck.pointsDelivery();
   gamePuck.drift();
   gamePuck.display();
+
 
 }
