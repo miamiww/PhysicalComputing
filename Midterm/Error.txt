@@ -1,0 +1,56 @@
+Arduino: 1.8.1 (Mac OS X), Board: "Arduino/Genuino Uno"
+
+Sketch uses 4496 bytes (13%) of program storage space. Maximum is 32256 bytes.
+Global variables use 243 bytes (11%) of dynamic memory, leaving 1805 bytes for local variables. Maximum is 2048 bytes.
+ioctl("TIOCMGET"): Device not configured
+avrdude: ser_drain(): read error: Device not configured
+avrdude: ser_send(): write error: Device not configured
+avrdude: ser_drain(): read error: Device not configured
+avrdude: ser_send(): write error: Device not configured
+avrdude: ser_drain(): read error: Device not configured
+avrdude: ser_send(): write error: Device not configured
+avrdude: ser_recv(): read error: Device not configured
+avrdude: stk500_recv(): programmer is not responding
+avrdude: stk500_getsync() attempt 1 of 10: not in sync: resp=0x00
+avrdude: ser_send(): write error: Device not configured
+avrdude: ser_recv(): read error: Device not configured
+avrdude: stk500_recv(): programmer is not responding
+avrdude: stk500_getsync() attempt 2 of 10: not in sync: resp=0x00
+avrdude: ser_send(): write error: Device not configured
+avrdude: ser_recv(): read error: Device not configured
+avrdude: stk500_recv(): programmer is not responding
+avrdude: stk500_getsync() attempt 3 of 10: not in sync: resp=0x00
+avrdude: ser_send(): write error: Device not configured
+avrdude: ser_recv(): read error: Device not configured
+avrdude: stk500_recv(): programmer is not responding
+avrdude: stk500_getsync() attempt 4 of 10: not in sync: resp=0x00
+avrdude: ser_send(): write error: Device not configured
+avrdude: ser_recv(): read error: Device not configured
+avrdude: stk500_recv(): programmer is not responding
+avrdude: stk500_getsync() attempt 5 of 10: not in sync: resp=0x00
+avrdude: ser_send(): write error: Device not configured
+avrdude: ser_recv(): read error: Device not configured
+avrdude: stk500_recv(): programmer is not responding
+avrdude: stk500_getsync() attempt 6 of 10: not in sync: resp=0x00
+avrdude: ser_send(): write error: Device not configured
+avrdude: ser_recv(): read error: Device not configured
+avrdude: stk500_recv(): programmer is not responding
+avrdude: stk500_getsync() attempt 7 of 10: not in sync: resp=0x00
+avrdude: ser_send(): write error: Device not configured
+avrdude: ser_recv(): read error: Device not configured
+avrdude: stk500_recv(): programmer is not responding
+avrdude: stk500_getsync() attempt 8 of 10: not in sync: resp=0x00
+avrdude: ser_send(): write error: Device not configured
+avrdude: ser_recv(): read error: Device not configured
+avrdude: stk500_recv(): programmer is not responding
+avrdude: stk500_getsync() attempt 9 of 10: not in sync: resp=0x00
+avrdude: ser_send(): write error: Device not configured
+avrdude: ser_recv(): read error: Device not configured
+avrdude: stk500_recv(): programmer is not responding
+avrdude: stk500_getsync() attempt 10 of 10: not in sync: resp=0x00
+avrdude: ser_drain(): read error: Device not configured
+avrdude: ser_drain(): read error: Device not configured
+
+This report would have more information with
+"Show verbose output during compilation"
+option enabled in File -> Preferences.
